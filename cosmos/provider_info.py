@@ -11,7 +11,7 @@ from cosmos import __version__  # type: ignore[attr-defined]
 
 def get_provider_info() -> dict[str, Any]:
     return {
-        "package-name": "astronomer-cosmos",  # Required
+        "package-name": "astronomer-cosmos-gcp-experimental",  # Required
         "name": "Astronomer Cosmos",  # Required
         "description": "Astronomer Cosmos is a library for rendering dbt workflows in Airflow. Contains dags, task groups, and operators.",  # Required
         "versions": [__version__],  # Required

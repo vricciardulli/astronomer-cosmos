@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "astronomer-cosmos"
+name = "astronomer-cosmos-gcp-experimental"
 dynamic = ["version"]
 description = "Orchestrate your dbt projects in Airflow"
 readme = "README.rst"
@@ -86,12 +86,12 @@ amazon = [
 google = ["apache-airflow-providers-google>=10.17.0", "gcsfs<2025.3.0"]
 microsoft = ["apache-airflow-providers-microsoft-azure>=8.5.0"]
 all = [
-    "astronomer-cosmos[dbt-all]",
-    "astronomer-cosmos[openlineage]",
-    "astronomer-cosmos[amazon]",
-    "astronomer-cosmos[google]",
-    "astronomer-cosmos[microsoft]",
-    "astronomer-cosmos[dbt-duckdb]"
+    "astronomer-cosmos-gcp-experimental[dbt-all]",
+    "astronomer-cosmos-gcp-experimental[openlineage]",
+    "astronomer-cosmos-gcp-experimental[amazon]",
+    "astronomer-cosmos-gcp-experimental[google]",
+    "astronomer-cosmos-gcp-experimental[microsoft]",
+    "astronomer-cosmos-gcp-experimental[dbt-duckdb]"
 ]
 docs = [
     "sphinx",
