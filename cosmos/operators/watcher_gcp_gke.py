@@ -107,9 +107,7 @@ class DbtProducerWatcherGcpGkeOperator(DbtBuildGcpGkeOperator):
     def execute(self, context: Context, **kwargs: Any) -> Any:
         task_instance = context.get("ti")
         if task_instance is None:
-            raise AirflowException(
-                "DbtProducerWatcherGcpGkeOperator expects a task instance in the execution context"
-            )
+            raise AirflowException("DbtProducerWatcherGcpGkeOperator expects a task instance in the execution context")
 
         try_number = getattr(task_instance, "try_number", 1)
 
@@ -142,7 +140,7 @@ class DbtConsumerWatcherGcpGkeSensor(BaseConsumerSensor, DbtRunGcpGkeOperator):
 class DbtBuildWatcherGcpGkeOperator:
     def __init__(self, *args: Any, **kwargs: Any):
         raise NotImplementedError(
-            "`ExecutionMode.WATCHER` does not expose a DbtBuild operator, "
+            "`ExecutionMode.WATCHER_GCP_GKE` does not expose a DbtBuild operator, "
             "since the build command is executed by the producer task."
         )
 

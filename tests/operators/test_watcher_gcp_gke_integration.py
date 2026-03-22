@@ -59,7 +59,6 @@ operator_args = {
         "POSTGRES_SCHEMA": "public",
         "POSTGRES_USER": "postgres",
     },
-    "retry": 0,
     "project_id": "my-gcp-project",
     "location": "us-central1",
     "cluster_name": "my-gke-cluster",
@@ -146,6 +145,4 @@ def test_dbt_dag_with_watcher_gcp_gke():
         "raw_orders_seed",
         "raw_customers_seed",
     }
-    assert (
-        dag_dbt_watcher_gcp_gke.task_dict["dbt_producer_watcher"].downstream_task_ids == expected_downstream_task_ids
-    )
+    assert dag_dbt_watcher_gcp_gke.task_dict["dbt_producer_watcher"].downstream_task_ids == expected_downstream_task_ids
